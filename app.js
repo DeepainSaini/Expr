@@ -4,16 +4,15 @@ const app  = express();
 
 app.use((req,res,next)=>{
 
-    console.log("first middleware");
+    req.user = "Guest";
+    console.log(`User set to: ${req.user}`);
     next();
 });
 
-app.use((req,res,next)=>{
-
-    console.log("Second middleware");
-    res.send('<h1>Welcome to express js</h1>');
-})
+app.get('/welcome',(req, res) => {
+    res.send(`<h1>Welcome, ${req.user}!</h1>`);
+});
 
 
 
-app.listen(4000);
+app.listen(3000);
