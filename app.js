@@ -2,14 +2,17 @@ const express  = require('express');
 
 const app  = express();
 
-const studentRouter = require('./routes/students');
-const corseRouter = require('./routes/course');
+const userRouter = require('./routes/userRoutes');
+const cartRouter = require('./routes/cartRoutes');
+const productRouter = require('./routes/productRoutes');
 
 const PORT = 4000;
 
 
-app.use(studentRouter);
-app.use(corseRouter);
+app.use(userRouter);
+app.use(productRouter);
+app.use(cartRouter);
+
 
 app.use((req,res)=>{
     res.status(404).send('Page Not Found');
