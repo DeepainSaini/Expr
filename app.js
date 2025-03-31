@@ -2,14 +2,18 @@ const express  = require('express');
 
 const app  = express();
 
-const booksRouter = require('./routes/books');
+const studentRouter = require('./routes/students');
+const corseRouter = require('./routes/course');
 
 const PORT = 4000;
 
-app.use(express.json());
 
+app.use(studentRouter);
+app.use(corseRouter);
 
-app.use(booksRouter);
+app.use((req,res)=>{
+    res.status(404).send('Page Not Found');
+})
 
 
 app.listen(PORT, () => {
