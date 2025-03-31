@@ -6,6 +6,9 @@ const userRouter = require('./routes/userRoutes');
 const cartRouter = require('./routes/cartRoutes');
 const productRouter = require('./routes/productRoutes');
 
+app.use(express.static('public'));
+app.use(express.json());
+
 const PORT = 4000;
 
 
