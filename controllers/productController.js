@@ -1,4 +1,4 @@
-const getProducts = (req, res) => {
+const getAllProducts = (req, res) => {
     res.send('Fetching all products');
 };
 
@@ -7,12 +7,12 @@ const getProductById = (req, res) => {
     res.send(`Fetchin user with ID : ${productId}`);
 };
 
-const postProduct = (req, res) => {
+const addProduct = (req, res) => {
     res.send('Adding a new product.');
 };
 
 module.exports = {
-    getProducts,
+    getAllProducts,
     getProductById,
-    postProduct
+    addProduct
 };
